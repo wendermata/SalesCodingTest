@@ -1,5 +1,4 @@
-﻿using Domain.Enums;
-using Domain.Repository.Shared.SearchableRepository;
+﻿using Domain.Repository.Shared.SearchableRepository;
 
 namespace Application.Common;
 public abstract class PaginatedListInput

@@ -20,12 +20,16 @@
             CreatedAt = createdAt ?? DateTime.Now;
         }
 
-        public void Update(string name, decimal price, int stockQuantity, bool isActive)
+        public void Update(string name, decimal price, int stockQuantity)
         {
             Name = name;
             Price = price;
             StockQuantity = stockQuantity;
-            IsActive = isActive;
+        }
+
+        public void Remove()
+        {
+            IsActive = false;
         }
     }
 }

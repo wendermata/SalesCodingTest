@@ -62,7 +62,7 @@ namespace Infra.Mongo.Repositories
             var list = await query.ToListAsync(cancellationToken);
             var total = await _collection.CountDocumentsAsync(filter, cancellationToken: cancellationToken);
 
-            return new SearchOutput<Product>(input.Page, input.PageSize, (int)total, list);
+            return new SearchOutput<SaleAggregate>(input.Page, input.PageSize, (int)total, list);
         }
 
         public async Task UpdateAsync(SaleAggregate entity, CancellationToken cancellationToken)
