@@ -5,12 +5,12 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.UseCases.Product.UpdateProduct
 {
-    public class UpdateProduct : IUpdateProduct
+    public class UpdateProductUseCase : IUpdateProductUseCase
     {
         private readonly IProductRepository _repository;
-        private readonly ILogger<UpdateProduct> _logger;
+        private readonly ILogger<UpdateProductUseCase> _logger;
 
-        public UpdateProduct(IProductRepository repository, ILogger<UpdateProduct> logger)
+        public UpdateProductUseCase(IProductRepository repository, ILogger<UpdateProductUseCase> logger)
         {
             _repository = repository;
             _logger = logger;

@@ -7,12 +7,12 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.UseCases.Product.CreateProduct
 {
-    public class CreateProduct : ICreateProduct
+    public class CreateProductUseCase : ICreateProductUseCase
     {
         private readonly IProductRepository _repository;
-        private readonly ILogger<CreateProduct> _logger;
+        private readonly ILogger<CreateProductUseCase> _logger;
 
-        public CreateProduct(IProductRepository repository, ILogger<CreateProduct> logger)
+        public CreateProductUseCase(IProductRepository repository, ILogger<CreateProductUseCase> logger)
         {
             _repository = repository;
             _logger = logger;

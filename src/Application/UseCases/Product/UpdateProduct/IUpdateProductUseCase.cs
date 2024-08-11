@@ -4,5 +4,5 @@ using MediatR;
 
 namespace Application.UseCases.Product.UpdateProduct
 {
-    public interface IUpdateProduct : IRequestHandler<UpdateProductInput, Output> { }
+    public interface IUpdateProductUseCase : IRequestHandler<UpdateProductInput, Output> { }
 }

@@ -4,5 +4,5 @@ using MediatR;
 
 namespace Application.UseCases.Product.ListProducts
 {
-    public interface IListProducts : IRequestHandler<ListProductsInput, ListProductsOutput> { }
+    public interface IListProductsUseCase : IRequestHandler<ListProductsInput, ListProductsOutput> { }
 }

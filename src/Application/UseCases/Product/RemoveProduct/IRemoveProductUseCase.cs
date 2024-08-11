@@ -4,5 +4,5 @@ using MediatR;
 
 namespace Application.UseCases.Product.RemoveProduct
 {
-    public interface IRemoveProduct : IRequestHandler<RemoveProductInput, Output> { }
+    public interface IRemoveProductUseCase : IRequestHandler<RemoveProductInput, Output> { }
 }

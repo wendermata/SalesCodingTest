@@ -5,12 +5,12 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.UseCases.Product.RemoveProduct
 {
-    public class RemoveProduct : IRemoveProduct
+    public class RemoveProductUseCase : IRemoveProductUseCase
     {
         private readonly IProductRepository _repository;
-        private readonly ILogger<RemoveProduct> _logger;
+        private readonly ILogger<RemoveProductUseCase> _logger;
 
-        public RemoveProduct(IProductRepository repository, ILogger<RemoveProduct> logger)
+        public RemoveProductUseCase(IProductRepository repository, ILogger<RemoveProductUseCase> logger)
         {
             _repository = repository;
             _logger = logger;

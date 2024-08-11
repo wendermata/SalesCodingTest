@@ -17,10 +17,10 @@ namespace Application.Extension
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(ApplicationExtension).Assembly));
 
-            services.AddTransient<ICreateProduct, CreateProduct>();
-            services.AddTransient<IListProducts, ListProducts>();
-            services.AddTransient<IRemoveProduct, RemoveProduct>();
-            services.AddTransient<IUpdateProduct, UpdateProduct>();
+            services.AddTransient<ICreateProductUseCase, CreateProductUseCase>();
+            services.AddTransient<IListProductsUseCase, ListProductsUseCase>();
+            services.AddTransient<IRemoveProductUseCase, RemoveProductUseCase>();
+            services.AddTransient<IUpdateProductUseCase, UpdateProductUseCase>();
 
             return services;
         }
