@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{4F31DEE7-2050-4FFE-AE37-53B6AFF0EDCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{4F31DEE7-2050-4FFE-AE37-53B6AFF0EDCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Mongo", "Infra.Mongo\Infra.Mongo.csproj", "{54C9ABE3-6594-4625-8179-0F6B1F2193F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Mongo", "src\Infra.Mongo\Infra.Mongo.csproj", "{54C9ABE3-6594-4625-8179-0F6B1F2193F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
