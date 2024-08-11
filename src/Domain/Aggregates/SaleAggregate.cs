@@ -1,9 +1,14 @@
 ﻿using Domain.Entities;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 
 namespace Domain.Aggregates
 {
     public class SaleAggregate
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.String)]
+
         public Guid Id { get; private set; }
         public string ZipCode { get; private set; }
         public decimal ShipmentValue { get; private set; }

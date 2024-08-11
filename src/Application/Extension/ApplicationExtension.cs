@@ -2,9 +2,13 @@
 using Application.Boundaries.Services.ViaCEP.Client;
 using Application.Boundaries.Services.ViaCEP.Client.Settings;
 using Application.UseCases.Product.CreateProduct;
+using Application.UseCases.Product.ListProducts;
+using Application.UseCases.Product.RemoveProduct;
+using Application.UseCases.Product.UpdateProduct;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
+
 namespace Application.Extension
 {
     public static class ApplicationExtension
@@ -14,6 +18,9 @@ namespace Application.Extension
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(ApplicationExtension).Assembly));
 
             services.AddTransient<ICreateProduct, CreateProduct>();
+            services.AddTransient<IListProducts, ListProducts>();
+            services.AddTransient<IRemoveProduct, RemoveProduct>();
+            services.AddTransient<IUpdateProduct, UpdateProduct>();
 
             return services;
         }
@@ -23,7 +30,7 @@ namespace Application.Extension
             services.AddTransient<IViaCEPService, ViaCEPService>();
             services.Configure<ViaCEPSettings>(configuration.GetSection("ViaCEP"));
             services.AddRefitClient<IViaCEPServiceClient>()
-                .ConfigureHttpClient(c => c.BaseAddress = new Uri(configuration.GetSection("ViaCEP:BaseAddress").Value));
+                .ConfigureHttpClient(c => c.BaseAddress = new Uri(configuration.GetSection("ViaCEP:BaseUrl").Value));
             return services;
         }
 
