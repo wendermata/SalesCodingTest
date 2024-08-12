@@ -29,7 +29,7 @@ namespace Application.UseCases.Sale.CreateSale.Mapping
             return sale;
         }
 
-        public static Item MapToDomain(this DomainProduct product, ItemOutput item)
+        public static Item MapToDomain(this DomainProduct product, CreateItemOutput item)
         {
             if (product is null || item is null) return null;
 

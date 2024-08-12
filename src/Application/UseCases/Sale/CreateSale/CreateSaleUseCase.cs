@@ -41,8 +41,8 @@ namespace Application.UseCases.Sale.CreateSale
 
                 if (!ZipCodeHelper.IsValid(request.ZipCode))
                 {
-                    _logger.LogError($"Invalid zip code. format should be \"0000-000\". Request: {SerializeHelper.SerializeObjectToJson(request)}");
-                    output.ErrorMessages.Add("Invalid zip code. format should be \"0000-000\".");
+                    _logger.LogError($"Invalid zip code. format should be \"00000-000\". Request: {SerializeHelper.SerializeObjectToJson(request)}");
+                    output.ErrorMessages.Add("Invalid zip code. format should be \"00000-000\".");
                     return output;
                 }
 
@@ -57,7 +57,7 @@ namespace Application.UseCases.Sale.CreateSale
                         return output;
                     }
 
-                    if (itemOutput.Quantity < product.StockQuantity)
+                    if (itemOutput.Quantity > product.StockQuantity)
                     {
                         _logger.LogError($"Requested stock quantity unavailable. Product: {product.Id}, Requested quantity: {itemOutput.Quantity}, Available quantity: {product.StockQuantity}");
                         output.ErrorMessages.Add("Requested stock quantity unavailable.");

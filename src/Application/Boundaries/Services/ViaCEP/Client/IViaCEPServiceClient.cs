@@ -5,7 +5,7 @@ namespace Application.Boundaries.Services.ViaCEP.Client
 {
     public interface IViaCEPServiceClient
     {
-        [Get("{zipcode}/json")]
+        [Get("/{zipcode}/json")]
         Task<ViaCEPResponse> GetCEPAsync(string zipCode);
     }
 }

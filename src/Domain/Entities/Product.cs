@@ -1,7 +1,12 @@
-﻿namespace Domain.Entities
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+
+namespace Domain.Entities
 {
     public class Product
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.String)]
         public Guid Id { get; private set; }
         public string Name { get; private set; }
         public decimal Price { get; private set; }
