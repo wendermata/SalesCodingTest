@@ -1,6 +1,11 @@
-version: '3.8'
+version: '3.4'
 
 services:
+  webapi:
+    image: ${DOCKER_REGISTRY-}webapi
+    build:
+      context: src
+      dockerfile: WebApi/Dockerfile
   mongo:
     image: mongo:latest
     container_name: mongo_sales

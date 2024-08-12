@@ -63,6 +63,7 @@ namespace Application.UseCases.Sale.CreateSale
                         output.ErrorMessages.Add("Requested stock quantity unavailable.");
                         return output;
                     }
+
                     products.Add(product);
                     product.SetStockQuantity(product.StockQuantity - itemOutput.Quantity);
                     await _productRepository.UpdateAsync(product, cancellationToken);
