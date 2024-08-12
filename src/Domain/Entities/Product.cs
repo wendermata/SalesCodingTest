@@ -31,5 +31,10 @@
         {
             IsActive = false;
         }
+
+        public void SetStockQuantity(int quantity)
+        {
+            StockQuantity = quantity;
+        }
     }
 }
