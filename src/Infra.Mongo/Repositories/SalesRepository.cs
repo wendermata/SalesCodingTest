@@ -38,14 +38,6 @@ namespace Infra.Mongo.Repositories
         public async Task<SearchOutput<SaleAggregate>> Search(SearchInput input, CancellationToken cancellationToken)
         {
             var toSkip = (input.Page - 1) * input.PageSize;
-            var filterBuilder = Builders<SaleAggregate>.Filter;
-            var filter = filterBuilder.Eq(x => x.IsActive, true);
-
-            if (!string.IsNullOrWhiteSpace(input.Search))
-            {
-                var searchFilter = filterBuilder.Regex(x => x.ZipCode, new MongoDB.Bson.BsonRegularExpression(input.Search, "i"));
-                filter = filterBuilder.And(filter, searchFilter);
-            }
 
             var sortBuilder = Builders<SaleAggregate>.Sort;
             var sort = (input.OrderBy.ToLower(), input.Order) switch
@@ -57,10 +49,10 @@ namespace Infra.Mongo.Repositories
                 _ => sortBuilder.Ascending(x => x.CreatedAt).Ascending(x => x.Id),
             };
 
-            var query = _collection.Find(filter).Sort(sort).Skip(toSkip).Limit(input.PageSize);
+            var query = _collection.Find(Builders<SaleAggregate>.Filter.Empty).Sort(sort).Skip(toSkip).Limit(input.PageSize);
 
             var list = await query.ToListAsync(cancellationToken);
-            var total = await _collection.CountDocumentsAsync(filter, cancellationToken: cancellationToken);
+            var total = await _collection.CountDocumentsAsync(Builders<SaleAggregate>.Filter.Empty, cancellationToken: cancellationToken);
 
             return new SearchOutput<SaleAggregate>(input.Page, input.PageSize, (int)total, list);
         }

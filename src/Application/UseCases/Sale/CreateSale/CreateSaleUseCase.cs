@@ -1,13 +1,13 @@
 ﻿using Application.Boundaries.Services.ViaCEP;
 using Application.Common;
 using Application.Common.Helpers;
-using Application.UseCases.Sales.CreateSale.Inputs;
-using Application.UseCases.Sales.CreateSale.Mapping;
+using Application.UseCases.Sale.CreateSale.Inputs;
+using Application.UseCases.Sale.CreateSale.Mapping;
 using Domain.Repository;
 using Microsoft.Extensions.Logging;
 using DomainProduct = Domain.Entities.Product;
 
-namespace Application.UseCases.Sales.CreateSale
+namespace Application.UseCases.Sale.CreateSale
 {
     public class CreateSaleUseCase : ICreateSaleUseCase
     {

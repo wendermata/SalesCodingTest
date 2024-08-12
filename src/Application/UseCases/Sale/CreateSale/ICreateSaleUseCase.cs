@@ -1,8 +1,8 @@
 ﻿using Application.Common;
-using Application.UseCases.Sales.CreateSale.Inputs;
+using Application.UseCases.Sale.CreateSale.Inputs;
 using MediatR;
 
-namespace Application.UseCases.Sales.CreateSale
+namespace Application.UseCases.Sale.CreateSale
 {
     public interface ICreateSaleUseCase : IRequestHandler<CreateSaleInput, Output> { }
 }

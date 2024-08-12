@@ -1,7 +1,7 @@
 ﻿using Application.Common;
 using MediatR;
 
-namespace Application.UseCases.Sales.CreateSale.Inputs
+namespace Application.UseCases.Sale.CreateSale.Inputs
 {
     public class CreateSaleInput : IRequest<Output>
     {

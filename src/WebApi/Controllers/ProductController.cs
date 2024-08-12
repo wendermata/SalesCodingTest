@@ -1,10 +1,8 @@
 ﻿using Application.Common;
-using Application.UseCases.Product.CreateProduct;
 using Application.UseCases.Product.CreateProduct.Inputs;
 using Application.UseCases.Product.ListProducts.Inputs;
 using Application.UseCases.Product.ListProducts.Outputs;
 using Application.UseCases.Product.RemoveProduct.Inputs;
-using Application.UseCases.Product.UpdateProduct;
 using Application.UseCases.Product.UpdateProduct.Inputs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
