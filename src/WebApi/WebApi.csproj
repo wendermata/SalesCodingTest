@@ -5,10 +5,6 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UserSecretsId>e1269b3e-20bc-4609-8fa5-c518338dab4f</UserSecretsId>
-		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-		<DockerfileContext>..</DockerfileContext>
-		<Dockerfile>../Dockerfile</Dockerfile>
-		<DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,6 +16,12 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Application\Application.csproj" />
 		<ProjectReference Include="..\Infra.Mongo\Infra.Mongo.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 
 </Project>
