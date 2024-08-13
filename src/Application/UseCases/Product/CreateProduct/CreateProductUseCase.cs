@@ -24,10 +24,11 @@ namespace Application.UseCases.Product.CreateProduct
             try
             {
                 var product = request.MapToDomain();
-                if(product is null)
+                if (product is null)
                 {
                     _logger.LogError($"Request is invalid. {SerializeHelper.SerializeObjectToJson(request)}");
                     output.ErrorMessages.Add("Request is invalid.");
+                    return output;
                 }
 
                 await _repository.InsertAsync(product, cancellationToken);

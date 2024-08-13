@@ -24,7 +24,7 @@ namespace Application.UseCases.Sale.CreateSale.Mapping
                 input.ZipCode,
                 GetShipmentValue(response));
 
-            sale.AddItems(items);
+            sale.Items.AddRange(items);
             sale.CalculateTotalValue();
             return sale;
         }

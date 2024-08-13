@@ -32,7 +32,7 @@ namespace Application.UseCases.Product.ListProducts
 
                 var searchInput = request.MapToSearchInput();
                 var searchResult = await _repository.Search(searchInput, cancellationToken);
-                if (searchResult.Items.Count == 0)
+                if (searchResult.Items is null || searchResult.Items.Count == 0)
                 {
                     _logger.LogWarning($"No products founded");
                     output.Messages.Add($"No products founded");

@@ -30,10 +30,6 @@ namespace Domain.Aggregates
             CancelledAt = cancelledAt;
         }
 
-        public void AddItem(Item item) => Items.Add(item);
-
-        public void AddItems(IEnumerable<Item> items) => Items.AddRange(items);
-
         public void CalculateTotalValue()
         {
             TotalValue = ShipmentValue;
